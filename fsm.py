@@ -217,7 +217,7 @@ class DFA(object):
         if 'before_%s' % cname in attr_list:
             getattr(self.state, 'before_%s' % cname)()
 
-        self._state_ret = self.state.commands[cname].do(self._state_ret)
+        self._state_ret = self.state.commands[cname].execute(self._state_ret)
 
         if 'after_%s' % cname in attr_list:
             getattr(self.state, 'after_%s' % cname)()

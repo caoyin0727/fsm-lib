@@ -245,6 +245,3 @@ class StateMachine(threading.Thread):
 
 class NotInitializedError(ValueError):
     """Error when DFA is not properly initialized."""
-
-    pass
-

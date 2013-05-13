@@ -37,9 +37,9 @@ Examples:
     >>>     def before_c3(self):
     >>>         print "State S1"
     >>>     def after_c2(self):
-    >>>         print "Switch to S2"
+    >>>         self.switch_state_to('s2')
     >>>     def after_c3(self):
-    >>>         print "Switch to S1"
+    >>>         print 'remains s1'
     >>>
     >>> class S2(State):
     >>>     weight = {'c1': 1, 'c3': 1}
@@ -48,9 +48,9 @@ Examples:
     >>>     def before_c3(self):
     >>>         print "State S2"
     >>>     def after_c1(self):
-    >>>         print "Switch to S1"
+    >>>         self.switch_state_to('s1')
     >>>     def after_c3(self):
-    >>>         print "Switch to S2"
+    >>>         print "remains S2"
     >>>
     >>> sm = StateMachine(duration=10)
     >>> sm.add_state(S1, C2, C3, is_start=True)
